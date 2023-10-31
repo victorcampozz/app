@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos para o formulário de cadastro */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Produto</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="telainicial.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="lista_clientes.html">Clientes</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Preencha os detalhes do novo produto</h2>
+        <form>
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome do Produto">
+            
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" name="preco" placeholder="Preço">
+            
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Descrição">
+            
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 App de Vendedor Externo</p>
+    </footer>
+</body>
+</html>

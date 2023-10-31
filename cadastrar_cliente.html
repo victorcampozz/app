@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos para o formulário de cadastro de clientes */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #mensagem {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Cliente</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="telainicial.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="cadastrar_cliente.html">Clientes</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Preencha os detalhes do novo cliente</h2>
+        <form id="clienteForm">
+            <label for="nome_razao_social">Nome/Razão Social</label>
+            <input type="text" id="nome_razao_social" name="nome_razao_social" placeholder="Nome/Razão Social">
+            
+            <label for="nome_fantasia">Nome Fantasia</label>
+            <input type="text" id="nome_fantasia" name="nome_fantasia" placeholder="Nome Fantasia">
+            
+            <label for="tipo_documento">Escolha o tipo de documento:</label>
+            <select id="tipo_documento" name="tipo_documento">
+                <option value="CPF">CPF</option>
+                <option value="CNPJ">CNPJ</option>
+            </select>
+            
+            <label for="cpf_cnpj">CPF ou CNPJ</label>
+            <input type="text" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00 ou 00.000.000/0000-00">
+            
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Telefone">
+            
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Endereço">
+            
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" placeholder="E-mail">
+            
+            <button type="submit">Cadastrar Cliente</button>
+        </form>
+        <div id="mensagem"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 App de Vendedor Externo</p>
+    </footer>
+    
+    <script>
+        const clienteForm = document.getElementById("clienteForm");
+        const mensagem = document.getElementById("mensagem");
+
+        clienteForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            // Verificar se todos os campos estão preenchidos
+            if (todosCamposPreenchidos()) {
+                mensagem.textContent = "Cliente cadastrado com sucesso!";
+                // Adicione a lógica para enviar os dados do cliente para o servidor aqui
+            } else {
+                mensagem.textContent = "Por favor, preencha todos os campos.";
+            }
+        });
+
+        function todosCamposPreenchidos() {
+            const campos = [
+                "nome_razao_social",
+                "nome_fantasia",
+                "tipo_documento",
+                "cpf_cnpj",
+                "telefone",
+                "endereco",
+                "email"
+            ];
+            for (const campo of campos) {
+                const input = document.getElementById(campo);
+                if (input.value.trim() === "") {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+
+
+

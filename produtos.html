@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos específicos para a lista de produtos */
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-list li {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-list li button {
+            background-color: #ff3333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .product-list li button.edit {
+            background-color: #33cc33;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Produtos</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="telainicial.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="lista_clientes.html">Clientes</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Lista de Produtos</h2>
+        <ul class="product-list">
+            <li>
+                Produto 1
+                <button class="edit">Editar</button>
+                <button>Remover</button>
+            </li>
+            <li>
+                Produto 2
+                <button class="edit">Editar</button>
+                <button>Remover</button>
+            </li>
+            <!-- Adicione mais produtos conforme necessário -->
+        </ul>
+        <p><a href="cadastrar_produtos.html">Cadastrar Novo Produto</a></p>
+    </main>
+    <footer>
+        <p>&copy; 2023 App de Vendedor Externo</p>
+    </footer>
+</body>
+</html>

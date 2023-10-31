@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: left; /* Alinhe o texto à esquerda */
+            padding: 10px; /* Adicione algum espaço para melhorar o visual */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0074D9;
+            color: #fff;
+        }
+
+        #btnSalvarPDF {
+            background-color: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista de Clientes</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="telainicial.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="cadastrar_cliente.html">Cadastrar Cliente</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome/Razão Social</th>
+                    <th>Nome Fantasia</th>
+                    <th>Tipo de Documento</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aqui você pode adicionar dinamicamente as informações dos clientes usando JavaScript ou uma linguagem de backend como PHP -->
+                <tr>
+                    <td>Cliente 1</td>
+                    <td>Fantasia 1</td>
+                    <td>CPF</td>
+                    <td>000.000.000-01</td>
+                    <td>(11) 1234-5678</td>
+                    <td>Rua Cliente 1</td>
+                    <td>cliente1@example.com</td>
+                </tr>
+                <tr>
+                    <td>Cliente 2</td>
+                    <td>Fantasia 2</td>
+                    <td>CNPJ</td>
+                    <td>00.000.000/0001-02</td>
+                    <td>(22) 9876-5432</td>
+                    <td>Rua Cliente 2</td>
+                    <td>cliente2@example.com</td>
+                </tr>
+                <!-- Adicione mais linhas para mais clientes -->
+            </tbody>
+        </table>
+        <button id="btnSalvarPDF">Salvar em PDF</button>
+    </main>
+
+    <!-- Inclua a biblioteca jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <script>
+        const btnSalvarPDF = document.getElementById("btnSalvarPDF");
+        
+        btnSalvarPDF.addEventListener("click", function () {
+            const doc = new jsPDF();
+            doc.autoTable({ html: 'table' }); // Gere a tabela como um PDF
+            doc.save('lista_de_clientes.pdf'); // Faça o download do arquivo PDF
+        });
+    </script>
+</body>
+</html>
+
